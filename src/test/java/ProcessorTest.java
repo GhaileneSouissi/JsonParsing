@@ -1,13 +1,20 @@
 import CoreProject.JsonLoader;
 import CoreProject.Processor;
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 import java.util.LinkedHashMap;
 
 public class ProcessorTest {
-    String pathjson = "C:\\Users\\ghailenes\\Desktop\\exercice\\liste_noms_age.json";
-    LinkedHashMap<String,Integer> users = JsonLoader.LoadJson(pathjson);
+
+    private LinkedHashMap<String,Integer> users = new LinkedHashMap<>();
+    @Before
+    public void Load(){
+        String pathjson = "C:\\Users\\ghailenes\\Desktop\\exercice\\liste_noms_age.json";
+        users = JsonLoader.LoadJson(pathjson);
+    }
+
 
     @Test
     public void theOldestTest(){
